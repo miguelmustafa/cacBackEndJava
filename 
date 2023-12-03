@@ -1,0 +1,41 @@
+[33mcommit 932cff07e7eefc6a082359a4fad103c842e25367[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Thu Nov 30 23:46:58 2023 -0300
+
+    agrego demas controlares, falte quizas alguna logica d ctrol
+
+[33mcommit 71c37d0d37fcb2efa4f8f844f955e5f5b058bff7[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Thu Nov 30 23:19:43 2023 -0300
+
+    agrego lib gson de google y controlador getAll oradores
+
+[33mcommit e6b7cec740172b7102440f1a1dad39ece448222f[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Thu Nov 30 22:36:41 2023 -0300
+
+    agrego controlador create orador
+
+[33mcommit 889028d5661536f6a968599281a8ae76c9a32fec[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Wed Nov 29 18:43:02 2023 -0300
+
+    agregando 1er avance controlador alta orador
+
+[33mcommit ca51f5a8d0596455238c90506e6e3e2af542f579[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Tue Nov 28 21:22:32 2023 -0300
+
+    agrego archivo .gitignore
+
+[33mcommit 173d6c84ce943070a87ec61a4c51f7240badc31e[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Tue Nov 28 21:11:28 2023 -0300
+
+    pruebas
+
+[33mcommit b867695dd503175676eac6b886a5d1ade93991c8[m
+Author: miguelmustafa <122842933+miguelmustafa@users.noreply.github.com>
+Date:   Mon Nov 27 11:56:15 2023 -0300
+
+    Primera subida
