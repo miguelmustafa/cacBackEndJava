@@ -28,6 +28,14 @@ public class Orador {
 		this.fechaAlta = fechaAlta;
 	}
 	
+	public Orador(Long id,String nombre, String apellido, String mail, String tema) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.mail = mail;
+		this.tema = tema;
+	}
+	
 	@Override
 	public String toString() {
 		return "Orador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", mail=" + mail + ", tema="

@@ -30,10 +30,10 @@ public class MySqlOradorRepository implements OradorRepository {
 			statement.setTimestamp(5, timestamp);
 			
 			statement.executeUpdate();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
+			throw new IllegalArgumentException("No se pudo crear el orador", e);
+		}	
 	}
 
 	@Override
@@ -61,9 +61,9 @@ public class MySqlOradorRepository implements OradorRepository {
 			}
 			
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new IllegalArgumentException("No obtener el orador", e);
 		}
 		
 		return orador;		
@@ -84,9 +84,9 @@ public class MySqlOradorRepository implements OradorRepository {
 			statement.setLong(5, orador.getId());
 			statement.executeUpdate();
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new IllegalArgumentException("No se pudo actualizar el orador", e);
 		}
 		
 
@@ -102,9 +102,9 @@ public class MySqlOradorRepository implements OradorRepository {
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setLong(1, id);
 			statement.executeUpdate();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new IllegalArgumentException("No se pudo eliminar el orador", e);
 		}
 		
 
@@ -113,13 +113,14 @@ public class MySqlOradorRepository implements OradorRepository {
 	@Override
 	public List<Orador> getAll() {
 
-		String sql = "select id_orador,nombre,apellido,mail,tema,fecha_alta from oradores";
+		String sql = "select id_orador,nombre,apellido,mail,tema,fecha_alta from oradores order by 1 desc";
 		Connection conn = AdministradorDeConexiones.getConnection();
-		List<Orador> oradores = new ArrayList<>();
+		
 		
 		try {
 			PreparedStatement statement = conn.prepareStatement(sql);			
-			ResultSet resultado = statement.executeQuery();			
+			ResultSet resultado = statement.executeQuery();
+			List<Orador> oradores = new ArrayList<>();
 			
 			while(resultado.next()) {
 				Long _id = resultado.getLong(1);
@@ -130,15 +131,17 @@ public class MySqlOradorRepository implements OradorRepository {
 				LocalDateTime fecha_alta = resultado.getTimestamp(6).toLocalDateTime();
 				
 				oradores.add(new Orador(_id, nombre, apellido, mail, tema, fecha_alta));
+				
 			}
+			return oradores;
 			
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new IllegalArgumentException("No se pudo obtener lista de oradores", e);
 		}
 		
-		return oradores;	
+		
 	}
 
 }
