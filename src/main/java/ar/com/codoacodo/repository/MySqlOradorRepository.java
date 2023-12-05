@@ -32,7 +32,7 @@ public class MySqlOradorRepository implements OradorRepository {
 			statement.executeUpdate();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			throw new IllegalArgumentException("No se pudo crear el orador", e);
+			throw new IllegalArgumentException("No se pudo crear el orador - email existente", e);
 		}	
 	}
 
@@ -86,7 +86,7 @@ public class MySqlOradorRepository implements OradorRepository {
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			throw new IllegalArgumentException("No se pudo actualizar el orador", e);
+			throw new IllegalArgumentException("No se pudo actualizar el orador - email existente", e);
 		}
 		
 
